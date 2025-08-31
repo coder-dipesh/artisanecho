@@ -846,3 +846,64 @@ a:hover {
 }
 
 }
+
+
+/* Form Validation */
+/* Validation states */
+input.error, textarea.error {
+  border: 2px solid #b00020; /* red for error */
+  background: #fff5f5;
+}
+
+input.success, textarea.success {
+  border: 2px solid #2e7d32; /* green for success */
+  background: #f0fff4;
+}
+
+.form-msg {
+  font-size: 0.9rem;
+  margin-top: 0.25rem;
+}
+
+.form-msg.error {
+  color: #b00020;
+}
+
+.form-msg.success {
+  color: #2e7d32;
+}
+/* Validation states */
+input.error, textarea.error {
+  border: 2px solid #b00020;
+  background: #fff5f5;
+}
+
+input.success, textarea.success {
+  border: 2px solid #2e7d32;
+  background: #f0fff4;
+}
+
+.error-text {
+  color: #b00020;
+  font-size: 0.85rem;
+  margin-top: 0.25rem;
+}
+
+.form-msg {
+  font-size: 0.95rem;
+  margin-bottom: 1rem;
+  padding: 0.75rem 1rem;
+  border-radius: 6px;
+}
+
+.form-msg.error {
+  background: #fff5f5;
+  border: 1px solid #b00020;
+  color: #b00020;
+}
+
+.form-msg.success {
+  background: #f0fff4;
+  border: 1px solid #2e7d32;
+  color: #2e7d32;
+}
