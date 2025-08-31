@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Shop | Artisan Echo</title>
+    <link rel="apple-touch-icon" sizes="180x180" href="./assets/favicon_io/apple-touch-icon.png" />
+    <link rel="icon" type="image/png" sizes="32x32" href="./assets/favicon_io/favicon-32x32.png" />
+    <link rel="icon" type="image/png" sizes="16x16" href="./assets/favicon_io/favicon-16x16.png" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Raleway:ital,wght@0,100..900;1,100..900&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="css/base.css" />
+  </head>
+  <body>
+    <header class="site-header" role="banner">
+      <div class="container header-inner">
+        <a class="logo" href="index.html" aria-label="Artisan Echo Home"><span class="logo-text">Artisan Echo</span></a>
+        <button class="nav-toggle" aria-label="Open menu" aria-expanded="false" aria-controls="site-nav">☰</button>
+        <nav id="site-nav" class="site-nav" aria-label="Primary">
+          <ul>
+            <li><a class="" href="index.html">Home</a></li>
+            <li><a class="" href="courses.html">Courses</a></li>
+            <li><a class="active" href="shop.html">Shop</a></li>
+            <li><a class="" href="gallery.html">Gallery</a></li>
+            <li><a class="" href="contact.html">Contact</a></li>
+          </ul>
+        </nav>
+      </div>
+    </header>
+    <main id="main">
+      <section class="hero hero-banner">
+        <div class="container hero-inner">
+          <h1>Shop Local Instruments</h1>
+          <p class="body-text">
+            Explore our collection of handcrafted guitars, ukuleles, drums, and more — each piece built by skilled local
+            makers and musicians.
+          </p>
+        </div>
+      </section>
+
+      <section class="filters container">
+        <div class="filter-row">
+          <label
+            >Instrument Type
+            <select class="select" id="sType">
+              <option value="all">All</option>
+              <option value="guitars">Guitars</option>
+              <option value="percussion">Percussion</option>
+              <option value="accessories">Accessories</option>
+            </select>
+          </label>
+          <label
+            >Price Range
+            <select class="select" id="sPrice">
+              <option value="any">Any</option>
+              <option value="low">$ - Budget</option>
+              <option value="mid">$$ - Mid</option>
+              <option value="high">$$$ - Premium</option>
+            </select>
+          </label>
+        </div>
+      </section>
+
+      <section class="container">
+        <ul class="card-grid product-grid">
+          <li class="card" data-cat="guitars mid">
+            <img loading="lazy" class="card-media" src="./assets/img/djembe drum.jpg" alt="Djembe drum" />
+            <div class="product-top">
+              <h3>African Djembe Drum</h3>
+              <span class="price">$234</span>
+            </div>
+            <p>Rich tone, hand-polished, perfect for blues and folk.</p>
+            <p class="maker small">By Liam C.</p>
+            <button class="btn">Add to cart</button>
+          </li>
+          <li class="card" data-cat="percussion low">
+            <img loading="lazy" class="card-media" src="./assets/img/mahogany ukulele .jpg" alt="Mahogany Ukulele" />
+            <div class="product-top">
+              <h3>Mahogany Ukulele</h3>
+              <span class="price">$174</span>
+            </div>
+            <p>Bright sound with a warm resonance, lightweight and easy to play.</p>
+            <p class="maker small">By Will Fr.</p>
+            <button class="btn">Add to cart</button>
+          </li>
+          <li class="card" data-cat="accessories low">
+            <img loading="lazy" class="card-media" src="./assets/img/leather guitar strap .jpg" alt="Guitar strap" />
+            <div class="product-top">
+              <h3>Leather Guitar Strap</h3>
+              <span class="price">$75</span>
+            </div>
+            <p>Comfortable strap in durable leather.</p>
+            <p class="maker small">By Oscar M.</p>
+            <button class="btn">Add to cart</button>
+          </li>
+          <li class="card" data-cat="accessories low">
+            <img loading="lazy" class="card-media" src="./assets/img/Mini Bongos.jpg" alt="Mini Bongos " />
+            <div class="product-top">
+              <h3>Mini Bongos</h3>
+              <span class="price">$109</span>
+            </div>
+            <p>Compact, high-quality percussion with hand-tuned skins.</p>
+            <p class="maker small">By Jake Ma.</p>
+            <button class="btn">Add to cart</button>
+          </li>
+          <li class="card" data-cat="accessories low">
+            <img loading="lazy" class="card-media" src="./assets/img/brass slide.jpg" alt="Brass Slide " />
+            <div class="product-top">
+              <h3>Brass Slide</h3>
+              <span class="price">$35</span>
+            </div>
+            <p>Rich blues tone, smooth sustain for electric and acoustic guitars.</p>
+            <p class="maker small">By John K.</p>
+            <button class="btn">Add to cart</button>
+          </li>
+          <li class="card" data-cat="accessories low">
+            <img loading="lazy" class="card-media" src="./assets/img/mug.jpg" alt="Music-Themed Ceramic Mug" />
+            <div class="product-top">
+              <h3>Music-Themed Ceramic Mug</h3>
+              <span class="price">$89</span>
+            </div>
+            <p>White ceramic with black treble clef and note patterns.</p>
+            <p class="maker small">By Ron Pt.</p>
+            <button class="btn">Add to cart</button>
+          </li>
+        </ul>
+      </section>
+
+      <section class="container makers">
+        <div>
+          <h1 class="action-title">Meet a maker</h1>
+          <h2 class="body-text">
+            Discover the stories behind the instruments — from garage workshops to festival stages.
+          </h2>
+        </div>
+
+        <figure class="video-placeholder" role="img" aria-label="Video about a maker">
+          <video autoplay muted loop playsinline width="100%" preload="metadata" poster="./assets/img/banner.png">
+            <source src="./assets/video/meet.mp4" type="video/mp4" />
+            Your browser does not support the video tag.
+          </video>
+        </figure>
+      </section>
+
+      <section class="cta container">
+        <div class="cta-bar">
+          <p class="action-title">Want to try before you buy?</p>
+          <div class="cta-buttons">
+            <a class="btn btn-primary" href="contact.html">Book a visit to our studio</a>
+            <a class="btn" href="contact.html">Contact us</a>
+          </div>
+        </div>
+      </section>
+    </main>
+    <footer class="site-footer">
+      <div class="container footer-grid">
+        <section aria-labelledby="f-brand">
+          <h3 id="f-brand" class="sr-only">Brand</h3>
+          <h1 class="brand">Artisan Echo</h1>
+          <p class="footer-info">Lessons for all ages and handcrafted instruments by local artists.</p>
+        </section>
+
+        <nav aria-labelledby="quick" class="footer-nav">
+          <h3 id="quick">Quick Links</h3>
+          <ul >
+            <li><a href="index.html">Home</a></li>
+            <li><a href="courses.html">Courses</a></li>
+            <li><a href="shop.html">Shop</a></li>
+            <li><a href="gallery.html">Gallery</a></li>
+            <li><a href="contact.html">Contact</a></li>
+          </ul>
+        </nav>
+
+        <address class="footer-contact" aria-labelledby="f-contact">
+          <h3 id="f-contact">Contact Us</h3>
+          <p><a href="mailto:info@artisanecho.com">info@artisanecho.com</a></p>
+          <p>53 Park Lane, Sydney</p>
+          <p><a href="tel:+61212345678">(02) 1234 5678</a></p>
+        </address>
+
+      </div>
+      <div class="container copy small">
+        © 2025 Artisan Echo | Designed by
+        <a href="https://dipeshsiwakoti.com.np" target="_blank" rel="noopener noreferrer"> Dipesh Siwakoti </a>
+      </div>
+    </footer>
+    <script src="js/main.js"></script>
+  </body>
+</html>

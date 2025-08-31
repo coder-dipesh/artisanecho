@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Courses | Artisan Echo</title>
+    <link rel="apple-touch-icon" sizes="180x180" href="./assets/favicon_io/apple-touch-icon.png" />
+    <link rel="icon" type="image/png" sizes="32x32" href="./assets/favicon_io/favicon-32x32.png" />
+    <link rel="icon" type="image/png" sizes="16x16" href="./assets/favicon_io/favicon-16x16.png" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Raleway:ital,wght@0,100..900;1,100..900&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="css/base.css" />
+  </head>
+  <body>
+    <header class="site-header" role="banner">
+      <div class="container header-inner">
+        <a class="logo" href="index.html" aria-label="Artisan Echo Home"><span class="logo-text">Artisan Echo</span></a>
+        <button class="nav-toggle" aria-label="Open menu" aria-expanded="false" aria-controls="site-nav">☰</button>
+        <nav id="site-nav" class="site-nav" aria-label="Primary">
+          <ul>
+            <li><a class="" href="index.html">Home</a></li>
+            <li><a class="active" href="courses.html">Courses</a></li>
+            <li><a class="" href="shop.html">Shop</a></li>
+            <li><a class="" href="gallery.html">Gallery</a></li>
+            <li><a class="" href="contact.html">Contact</a></li>
+          </ul>
+        </nav>
+      </div>
+    </header>
+    <main id="main">
+      <section class="hero hero-banner">
+        <div class="container hero-inner">
+          <h1>Our Music Courses</h1>
+          <p class="body-text">Whether you're a beginner or a seasoned player, we have a course for you.</p>
+        </div>
+      </section>
+
+      <section class="filters container">
+        <div class="filter-row">
+          <label
+            >Instrument
+            <select class="select" id="fInstrument">
+              <option value="all">All</option>
+              <option value="guitar">Guitar</option>
+              <option value="piano">Piano</option>
+              <option value="voice">Voice</option>
+              <option value="drums">Drums</option>
+            </select>
+          </label>
+          <label
+            >Level
+            <select class="select" id="fLevel">
+              <option value="any">Any</option>
+              <option value="beginner">Beginner</option>
+              <option value="intermediate">Intermediate</option>
+              <option value="advanced">Advanced</option>
+            </select>
+          </label>
+          <label
+            >Age Group
+            <select class="select" id="fAge">
+              <option value="any">Any</option>
+              <option value="kids">Kids</option>
+              <option value="teens">Teens</option>
+              <option value="adults">Adults</option>
+            </select>
+          </label>
+        </div>
+      </section>
+
+      <section class="container">
+        <ul class="card-grid course-grid">
+          <li class="card" data-cat="guitar beginner adults">
+            <img loading="lazy" class="card-media" src="./assets/img/acousticguitar.jpg" alt="Guitar course" />
+            <p class="small">Beginner · 1.2 hrs</p>
+            <h3>Music Lessons — Acoustic Guitar</h3>
+            <p>Chords, rhythm, and simple melodies to get you playing fast.</p>
+            <a class="btn btn-link learn-more" data-course="guitar1" href="#">Learn More</a>
+          </li>
+          <li class="card" data-cat="piano beginner adults">
+            <img loading="lazy" class="card-media" src="./assets/img/piano.jpg" alt="Piano course" />
+            <p class="small">Beginner · 1.2 hrs</p>
+            <h3>Music Lessons — Piano</h3>
+            <p>Foundations of reading, technique, and performance.</p>
+            <a class="btn btn-link learn-more" data-course="piano1" href="#">Learn More</a>
+          </li>
+          <li class="card" data-cat="voice all kids">
+            <img loading="lazy" class="card-media" src="./assets/img/kidsvocal.jpg" alt="Vocal course" />
+            <p class="small">All Levels · 45 mins</p>
+            <h3>Music Lessons — Kids Vocal Club</h3>
+            <p>Pitch, breathing, and confidence in a fun group.</p>
+            <a class="btn btn-link learn-more" data-course="voice1" href="#">Learn More</a>
+          </li>
+        </ul>
+      </section>
+
+      <section class="cta container">
+        <div class="cta-bar">
+          <p class="action-title">Ready to start your musical journey?</p>
+          <p>
+            <a class="btn btn-primary" href="contact.html#trial">Book a Free Trial Lesson</a>
+            <a class="btn" href="contact.html">Contact us</a>
+          </p>
+        </div>
+      </section>
+
+      <div class="modal" id="courseModal" role="dialog" aria-modal="true" aria-labelledby="courseTitle" hidden>
+        <div class="modal-content">
+          <button class="modal-close" aria-label="Close">×</button>
+          <h3 id="courseTitle">Course title</h3>
+          <p id="courseDesc">Course description goes here.</p>
+        </div>
+      </div>
+    </main>
+    <footer class="site-footer">
+      <div class="container footer-grid">
+        <section aria-labelledby="f-brand">
+          <h3 id="f-brand" class="sr-only">Brand</h3>
+          <h1 class="brand">Artisan Echo</h1>
+          <p class="footer-info">Lessons for all ages and handcrafted instruments by local artists.</p>
+        </section>
+
+        <nav aria-labelledby="quick" class="footer-nav">
+          <h3 id="quick">Quick Links</h3>
+          <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="courses.html">Courses</a></li>
+            <li><a href="shop.html">Shop</a></li>
+            <li><a href="gallery.html">Gallery</a></li>
+            <li><a href="contact.html">Contact</a></li>
+          </ul>
+        </nav>
+
+        <address class="footer-contact" aria-labelledby="f-contact">
+          <h3 id="f-contact">Contact Us</h3>
+          <p><a href="mailto:info@artisanecho.com">info@artisanecho.com</a></p>
+          <p>53 Park Lane, Sydney</p>
+          <p><a href="tel:+61212345678">(02) 1234 5678</a></p>
+        </address>
+      </div>
+      <div class="container copy small">
+        © 2025 Artisan Echo | Designed by
+        <a href="https://dipeshsiwakoti.com.np" target="_blank" rel="noopener noreferrer"> Dipesh Siwakoti </a>
+      </div>
+    </footer>
+    <script src="js/main.js"></script>
+  </body>
+</html>
