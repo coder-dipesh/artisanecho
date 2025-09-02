@@ -19,15 +19,15 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
             $_SESSION['role'] = $user['role'];
             $_SESSION['name'] = $user['full_name'];
 
-            $success = "✅ Login successful! Redirecting...";
+            $success = "Login successful! Redirecting...";
             echo "<script>
-                setTimeout(() => { window.location.href = 'index.php'; }, 3000);
+                setTimeout(() => { window.location.href = 'index.php'; }, 2000);
             </script>";
         } else {
-            $error = "⚠️ Invalid email or password.";
+            $error = "Invalid email or password.";
         }
     } else {
-        $error = "⚠️ Both fields are required!";
+        $error = "Both fields are required!";
     }
 }
 ?>
@@ -47,14 +47,14 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
   <?php include 'includes/header.php'; ?>
 
   <main id="main">
-    <section class="hero hero-banner">
-      <div class="container hero-inner">
-        <h1>Login</h1>
+
+
+    <section class="container contact-panel" style="display:flex; flex-direction:column;">
+      <div>
+
+        <h1 style="font-size:1.9rem; padding:0;">Login</h1>
         <p class="body-text">Welcome back! Access your account to continue.</p>
       </div>
-    </section>
-
-    <section class="container contact-panel">
       <form method="POST" class="contact-form" novalidate>
         <?php if (!empty($error)): ?>
         <div class="form-msg error"><?= htmlspecialchars($error) ?></div>
@@ -74,14 +74,14 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
           <label for="password">Password</label>
           <div class="password-wrapper">
             <input id="password" name="password" type="password" required />
-            <button type="button" id="togglePassword" class="toggle-btn" aria-label="Show password">👁</button>
+
           </div>
           <small class="error-text" id="err-pass"></small>
         </div>
 
 
         <button class="btn btn-primary" type="submit">Login</button>
-        <p class="small">Don’t have an account? <a href="register.php">Register here</a></p>
+        <p class="font-small">Don’t have an account ? <a class="link" href="register.php">Register here</a></p>
       </form>
     </section>
   </main>

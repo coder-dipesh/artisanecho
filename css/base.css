@@ -51,6 +51,13 @@ a:hover {
 	
 }
 
+.text-small{
+	font-size: .9rem;
+	color: #282828;
+}
+
+
+
 .body-text {
   font-size: 1rem;
   color: var(---body-text);

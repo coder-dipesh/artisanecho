@@ -7,9 +7,14 @@
 
 /* Form group */
 .form-group {
-  margin-bottom: 1.2rem;
+  margin-bottom: 2rem;
   position: relative;
 }
+
+
+  .form-group label {
+    margin-bottom: 0.4rem;
+  }
 
 /* Inputs */
 input {

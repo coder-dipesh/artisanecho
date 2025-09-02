@@ -36,15 +36,28 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Register | Artisan Echo</title>
   <link rel="stylesheet" href="css/base.css" />
+
+
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&family=Playfair+Display:wght@400;700&display=swap" rel="stylesheet" />
-</head>
+  <style>
+  .form-group {
+    margin-bottom: 2rem;
+  }
+
+  .form-group label {
+    margin-bottom: 0.4rem;
+  }
+  </style>
+
+
+  < /head>
 
 <body>
   <?php include 'includes/header.php'; ?>
 
 
 
-  <main id="main">
+  <main id="main" style="padding:3rem">
 
     <section class="container contact-panel">
 
@@ -63,7 +76,11 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
         </script>
         <?php endif; ?>
 
-        <div class="form-group">
+        <h1 style="font-size:1.9rem; padding:0;">Create your artisan account</h1>
+        <p class="body-text">Welcome! Please enter your details.</p>
+
+
+        <div class="form-group" style="margin-top:3rem;">
           <label for="full_name">Full Name</label>
           <input id="full_name" name="full_name" type="text" required />
           <small class="error-text" id="err-name"></small>
@@ -81,9 +98,13 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
           <small class="error-text" id="err-pass"></small>
         </div>
 
-        <button class="btn btn-primary" type="submit">Register</button>
-        <p class="small">Already have an account? <a href="login.php">Login here</a></p>
+        <button class="btn btn-primary" type="submit">Create an account</button>
+        <p class="text-small">Already have an account? <a href="login.php">Login here</a></p>
       </form>
+
+      <div>
+        <img src="assets/img/register.png" alt="">
+      </div>
 
     </section>
   </main>
