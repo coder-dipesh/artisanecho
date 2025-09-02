@@ -203,6 +203,13 @@ a:hover {
 	border: 0;
 }
 
+.btn-danger{
+	background: linear-gradient(135deg, #b00020, #dc2626);
+	color:var(--brand-ink);
+	border:0;
+
+}
+
 .btn-link {
 	border: 0;
 	background: transparent;
@@ -907,3 +914,4 @@ input.success, textarea.success {
   border: 1px solid #2e7d32;
   color: #2e7d32;
 }
+
