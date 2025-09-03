@@ -631,11 +631,13 @@ a:hover {
 	padding: 1rem 0 0.5rem;
 }
 
-.select {
-	padding: .6rem .9rem;
-	border: 1px solid #d1d5db;
-	border-radius: 10px;
-	background: #fff;
+
+
+#filterForm select{
+    padding: .6rem .9rem;
+    border: 1px solid #d1d5db;
+    border-radius: 10px;
+    background: #fff;
 }
 
 .product-top {
@@ -842,10 +844,17 @@ a:hover {
 .form-inline {
 	display: flex;
   flex-direction: column;
-	gap: .6rem;
+	gap: 1rem;
   justify-content: space-between;
-	align-items: center;
+	align-items: self-start;
   width: 100%;
+}
+
+#filterForm select{
+    padding: .6rem .9rem;
+    border: 1px solid #d1d5db;
+    border-radius: 10px;
+    background: #fff;
 }
 
 .form-inline input {
@@ -928,3 +937,27 @@ input.success, textarea.success {
   color: #2e7d32;
 }
 
+
+/* Shop */
+.products-grid {
+  margin: 3rem 0;
+}
+
+.card-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 2rem;
+  list-style: none;
+  padding: 0;
+}
+
+.price {
+  font-weight: 600;
+  margin: 0.5rem 0;
+}
+
+.out-of-stock {
+  color: #b00020;
+  font-weight: 600;
+}
+/* end */
