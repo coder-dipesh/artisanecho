@@ -1,3 +1,8 @@
+<?php
+if (session_status() === PHP_SESSION_NONE) {
+    session_start();
+}
+?>
 <header class="site-header" role="banner">
   <div class="container header-inner">
     <a class="logo" href="index.php" aria-label="Artisan Echo Home">
@@ -12,7 +17,7 @@
         <li><a class="<?= basename($_SERVER['PHP_SELF'])=='gallery.php'?'active':'' ?>" href="gallery.php">Gallery</a></li>
         <li><a class="<?= basename($_SERVER['PHP_SELF'])=='contact.php'?'active':'' ?>" href="contact.php">Contact</a></li>
         <?php if (isset($_SESSION['user_id'])): ?>
-
+        <li class="welcome-msg">Welcome, <?= htmlspecialchars($_SESSION['name']); ?>!</li>
         <li><a class="btn-danger" href="logout.php">Logout</a></li>
         <?php else: ?>
         <li><a class="" href=" login.php">Login</a></li>

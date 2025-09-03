@@ -1,9 +1,16 @@
 <?php
 session_start();
+
+// Redirect if already logged in
+if (isset($_SESSION['user_id'])) {
+    header("Location: index.php");
+    exit;
+}
+
 require 'db.php';
 
-$success = "";
 $error = "";
+$success = "";
 
 if ($_SERVER["REQUEST_METHOD"] === "POST") {
     $name = trim($_POST['full_name']);
@@ -17,7 +24,10 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
         $stmt = $pdo->prepare("INSERT INTO users (full_name, email, password_hash, role) VALUES (?, ?, ?, ?)");
         try {
             $stmt->execute([$name, $email, $hash, $role]);
-            $success = "Registration successful! You can now <a href='login.php'>login here</a>.";
+            $success = " Registration successful! Redirecting to login...";
+            echo "<script>
+                setTimeout(() => { window.location.href = 'login.php'; }, 1500);
+            </script>";
         } catch (PDOException $e) {
             $error = "Email is already registered!";
         }
@@ -26,8 +36,6 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
     }
 }
 ?>
-
-
 <!DOCTYPE html>
 <html lang="en">
 
@@ -36,51 +44,27 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Register | Artisan Echo</title>
   <link rel="stylesheet" href="css/base.css" />
-
-
+  <link rel="stylesheet" href="css/auth.css" />
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&family=Playfair+Display:wght@400;700&display=swap" rel="stylesheet" />
-  <style>
-  .form-group {
-    margin-bottom: 2rem;
-  }
-
-  .form-group label {
-    margin-bottom: 0.4rem;
-  }
-  </style>
-
-
-  < /head>
+</head>
 
 <body>
   <?php include 'includes/header.php'; ?>
 
-
-
-  <main id="main" style="padding:3rem">
-
-    <section class="container contact-panel">
-
-      <form method="POST" class="contact-form" novalidate>
-
+  <main id="main">
+    <section class="container contact-panel auth-panel">
+      <form method="POST" class="contact-form" id="registerForm" novalidate>
         <?php if (!empty($error)): ?>
         <div class="form-msg error"><?= htmlspecialchars($error) ?></div>
         <?php endif; ?>
-
         <?php if (!empty($success)): ?>
         <div class="form-msg success"><?= $success ?></div>
-        <script>
-        setTimeout(() => {
-          window.location.href = "login.php";
-        }, 3000);
-        </script>
         <?php endif; ?>
 
-        <h1 style="font-size:1.9rem; padding:0;">Create your artisan account</h1>
+        <h1>Create your Artisan account</h1>
         <p class="body-text">Welcome! Please enter your details.</p>
 
-
-        <div class="form-group" style="margin-top:3rem;">
+        <div class="form-group">
           <label for="full_name">Full Name</label>
           <input id="full_name" name="full_name" type="text" required />
           <small class="error-text" id="err-name"></small>
@@ -102,69 +86,14 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
         <p class="text-small">Already have an account? <a href="login.php">Login here</a></p>
       </form>
 
-      <div>
-        <img src="assets/img/register.png" alt="">
+      <div class="auth-image">
+        <img src="assets/img/register.png" alt="Register illustration">
       </div>
-
     </section>
   </main>
 
-  <script>
-  const form = document.querySelector("form");
-
-  form.addEventListener("submit", function(e) {
-    let valid = true;
-
-    // Reset error messages
-    document.querySelectorAll(".error-text").forEach(el => el.innerText = "");
-    document.querySelectorAll("input").forEach(el => el.classList.remove("error", "success"));
-
-    // Full name validation
-    const name = document.getElementById("full_name");
-    if (name.value.trim().length < 3) {
-      document.getElementById("err-name").innerText = "Name must be at least 3 characters.";
-      name.classList.add("error");
-      valid = false;
-    } else {
-      name.classList.add("success");
-    }
-
-    // Email validation
-    const email = document.getElementById("email");
-    const emailPattern = /^[^ ]+@[^ ]+\.[a-z]{2,}$/;
-    if (!emailPattern.test(email.value)) {
-      document.getElementById("err-email").innerText = "Enter a valid email address.";
-      email.classList.add("error");
-      valid = false;
-    } else {
-      email.classList.add("success");
-    }
-
-    // Password validation
-    const pass = document.getElementById("password");
-    if (pass.value.length < 6) {
-      document.getElementById("err-pass").innerText = "Password must be at least 6 characters.";
-      pass.classList.add("error");
-      valid = false;
-    } else {
-      pass.classList.add("success");
-    }
-
-    if (!valid) e.preventDefault();
-  });
-
-  form.querySelectorAll("input").forEach(input => {
-    input.addEventListener("input", () => {
-      form.dispatchEvent(new Event("submit", {
-        cancelable: true
-      }));
-    });
-  });
-  </script>
-
   <?php include 'includes/footer.php'; ?>
-
-
+  <script src="js/register.js"></script>
 </body>
 
 </html>

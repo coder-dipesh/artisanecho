@@ -1,20 +1,32 @@
-
-/* Wrapper spacing */
+/* Shared wrapper for login/register */
+.auth-panel,
 .contact-panel {
-  max-width: 480px;
-  margin: 2rem auto;
+  max-width: 900px;
+  margin: 3rem auto;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2rem;
+  align-items: center;
 }
 
-/* Form group */
+/* Headings */
+.auth-panel h1,
+.contact-panel h1 {
+  font-size: 1.9rem;
+  margin-bottom: 0.5rem;
+}
+
+/* Form groups */
 .form-group {
-  margin-bottom: 2rem;
+  margin-bottom: 1.5rem;
   position: relative;
 }
 
-
-  .form-group label {
-    margin-bottom: 0.4rem;
-  }
+.form-group label {
+  display: block;
+  margin-bottom: 0.4rem;
+  font-weight: 600;
+}
 
 /* Inputs */
 input {
@@ -50,16 +62,9 @@ input.success { border: 2px solid #2e7d32; background: #f0fff4; }
   position: relative;
   width: 100%;
 }
-
 .password-wrapper input {
-  width: 100%;
-  padding: 0.8rem;
-  padding-right: 2.5rem; /* space for eye icon */
-  border: 1px solid #ddd;
-  border-radius: 8px;
-  font-size: 1rem;
+  padding-right: 2.5rem; 
 }
-
 .toggle-btn {
   position: absolute;
   top: 50%;
@@ -72,3 +77,57 @@ input.success { border: 2px solid #2e7d32; background: #f0fff4; }
   color: #555;
 }
 
+.auth-image img {
+  max-width: 100%;
+  border-radius: 12px;
+}
+/* Responsive styles for login & register */
+@media (max-width: 768px) {
+  .auth-panel,
+  .contact-panel {
+    grid-template-columns: 1fr; 
+    gap: 1.5rem;
+    text-align: center;
+  }
+
+  .auth-image {
+    order: 1; 
+  }
+
+  .auth-image img {
+    max-width: 80%;
+    margin: 0 auto;
+    display: block;
+  }
+
+  form.contact-form {
+    text-align: left; 
+  }
+
+  h1 {
+    font-size: 1.5rem;
+  }
+
+  input {
+    font-size: 0.95rem;
+    padding: 0.7rem;
+  }
+
+  .btn {
+    width: 100%; 
+  }
+}
+
+@media (max-width: 480px) {
+  h1 {
+    font-size: 1.3rem;
+  }
+
+  .auth-image img {
+    max-width: 100%;
+  }
+
+  .form-group {
+    margin-bottom: 1rem;
+  }
+}

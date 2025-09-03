@@ -1,10 +1,11 @@
-// Mobile nav toggle with ARIA
-const toggle = document.querySelector(".nav-toggle");
+const navToggle = document.querySelector(".nav-toggle");
 const nav = document.getElementById("site-nav");
-if (toggle && nav) {
-  toggle.addEventListener("click", () => {
-    const open = nav.classList.toggle("open");
-    toggle.setAttribute("aria-expanded", String(open));
+
+if (navToggle && nav) {
+  navToggle.addEventListener("click", () => {
+    const expanded = navToggle.getAttribute("aria-expanded") === "true";
+    navToggle.setAttribute("aria-expanded", String(expanded));
+    nav.classList.toggle("open");
   });
 }
 

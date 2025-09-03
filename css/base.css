@@ -56,6 +56,12 @@ a:hover {
 	color: #282828;
 }
 
+.welcome-msg {
+  font-weight: 600;
+	font-size: 0.9rem;
+  color: var(--brand);
+}
+
 
 
 .body-text {
@@ -266,7 +272,7 @@ a:hover {
 
 .site-nav a.active,
 .site-nav a:hover {
-	background: #f3f4f6;
+	background: rgba(45, 58, 140, 7%);
 	text-decoration: none;
 }
 

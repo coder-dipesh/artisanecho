@@ -1,25 +1,3 @@
-<?php
-session_start();
-require 'db.php';
-
-$newsSuccess = "";
-$newsError = "";
-
-if ($_SERVER["REQUEST_METHOD"] === "POST" && isset($_POST['newsletter_email'])) {
-    $email = trim($_POST['newsletter_email']);
-    if (!empty($email) && filter_var($email, FILTER_VALIDATE_EMAIL)) {
-        try {
-            $stmt = $pdo->prepare("INSERT INTO newsletter_subs (email) VALUES (?)");
-            $stmt->execute([$email]);
-            $newsSuccess = "🎉 You’ve subscribed successfully!";
-        } catch (PDOException $e) {
-            $newsError = "⚠️ This email is already subscribed.";
-        }
-    } else {
-        $newsError = "⚠️ Please enter a valid email address.";
-    }
-}
-?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -119,14 +97,9 @@ if ($_SERVER["REQUEST_METHOD"] === "POST" && isset($_POST['newsletter_email'])) 
           <h2>Subscribe to newsletter</h2>
           <p class="body-text">Join our mailing list for class updates, workshops, and special offers.</p>
 
-          <?php if (!empty($newsError)): ?>
-          <div class="form-msg error"><?= htmlspecialchars($newsError) ?></div>
-          <?php endif; ?>
-          <?php if (!empty($newsSuccess)): ?>
-          <div class="form-msg success"><?= htmlspecialchars($newsSuccess) ?></div>
-          <?php endif; ?>
+          <div id="newsMsg"></div>
 
-          <form id="newsletterForm" class="form-inline" method="POST" novalidate>
+          <form id="newsletterForm" class="form-inline" novalidate>
             <label for="newsEmail" class="sr-only">Email</label>
             <input id="newsEmail" name="newsletter_email" type="email" placeholder="you@example.com" required />
             <button class="btn" type="submit">Subscribe</button>
@@ -137,6 +110,7 @@ if ($_SERVER["REQUEST_METHOD"] === "POST" && isset($_POST['newsletter_email'])) 
         </figure>
       </div>
     </section>
+
 
     <section class="cta container">
       <div class="cta-bar">
@@ -150,6 +124,10 @@ if ($_SERVER["REQUEST_METHOD"] === "POST" && isset($_POST['newsletter_email'])) 
   </main>
 
   <?php include 'includes/footer.php'; ?>
+  <script src="js/newsletter.js"></script>
+  <script src="js/main.js"></script>
+
 </body>
+
 
 </html>

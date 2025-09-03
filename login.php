@@ -1,8 +1,14 @@
 <?php
 session_start();
+
+// Redirect user to home if already logged in
+if (isset($_SESSION['user_id'])) {
+    header("Location: index.php");
+    exit;
+}
+
 require 'db.php';
 
-$success = "";
 $error = "";
 
 if ($_SERVER["REQUEST_METHOD"] === "POST") {
@@ -16,13 +22,11 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
 
         if ($user && password_verify($password, $user['password_hash'])) {
             $_SESSION['user_id'] = $user['user_id'];
-            $_SESSION['role'] = $user['role'];
-            $_SESSION['name'] = $user['full_name'];
+            $_SESSION['role']    = $user['role'];
+            $_SESSION['name']    = $user['full_name'];
 
-            $success = "Login successful! Redirecting...";
-            echo "<script>
-                setTimeout(() => { window.location.href = 'index.php'; }, 2000);
-            </script>";
+            header("Location: index.php");
+            exit;
         } else {
             $error = "Invalid email or password.";
         }
@@ -31,6 +35,8 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
     }
 }
 ?>
+
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -49,13 +55,11 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
   <main id="main">
 
 
-    <section class="container contact-panel" style="display:flex; flex-direction:column;">
-      <div>
+    <section class="container contact-panel">
 
+      <form method="POST" class="contact-form" novalidate>
         <h1 style="font-size:1.9rem; padding:0;">Login</h1>
         <p class="body-text">Welcome back! Access your account to continue.</p>
-      </div>
-      <form method="POST" class="contact-form" novalidate>
         <?php if (!empty($error)): ?>
         <div class="form-msg error"><?= htmlspecialchars($error) ?></div>
         <?php endif; ?>
@@ -83,6 +87,9 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
         <button class="btn btn-primary" type="submit">Login</button>
         <p class="font-small">Don’t have an account ? <a class="link" href="register.php">Register here</a></p>
       </form>
+      <div class="auth-image">
+        <img src="assets/img/login.png" alt="Login Illustration">
+      </div>
     </section>
   </main>
 
