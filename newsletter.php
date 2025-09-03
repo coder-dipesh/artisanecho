@@ -10,7 +10,7 @@ if ($_SERVER["REQUEST_METHOD"] === "POST" && isset($_POST['newsletter_email'])) 
         try {
             $stmt = $pdo->prepare("INSERT INTO newsletter_subs (email) VALUES (?)");
             $stmt->execute([$email]);
-            echo json_encode(["status" => "success", "message" => "You’ve subscribed successfully!"]);
+            echo json_encode(["status" => "success", "message" => "You’ve subscribed successfully! 🎉"]);
         } catch (PDOException $e) {
             echo json_encode(["status" => "error", "message" => "This email is already subscribed."]);
         }

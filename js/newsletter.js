@@ -23,7 +23,7 @@ document.addEventListener("DOMContentLoaded", () => {
       }
     } catch (error) {
       msgBox.className = "form-msg error";
-      msgBox.innerText = "Something went wrong. Please try again.";
+      msgBox.innerText = "Please try again";
     }
   });
 });
