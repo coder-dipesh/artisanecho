@@ -23,9 +23,23 @@
       <p>53 Park Lane, Sydney</p>
       <p><a href="tel:+61212345678">(02) 1234 5678</a></p>
     </address>
+
+    <section class="privacy">
+      <h6>Privacy Notice</h6>
+      <p style="font-size:11px;">We respect your privacy. Any information collected through registration, contact, or newsletter forms is securely
+        stored
+        and
+        used only
+        to
+        provide our services.
+        Passwords are hashed before storage. We never sell or share your data with third parties without your consent.
+        For any questions, contact us via <a href="contact.php">our contact page</a>.</p>
+    </section>
   </div>
+
+
   <div class="container copy small">
-    © 2025 Artisan Echo | Designed by
+    © 2025 Artisan Echo | Designed and Developed with ❤️ by
     <a href="https://dipeshsiwakoti.com.np" target="_blank" rel="noopener noreferrer"> Dipesh Siwakoti </a>
   </div>
 </footer>

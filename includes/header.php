@@ -9,7 +9,7 @@ if (session_status() === PHP_SESSION_NONE) {
       <span class="logo-text">Artisan Echo</span>
     </a>
     <button class="nav-toggle" aria-label="Open menu" aria-expanded="false" aria-controls="site-nav">☰</button>
-    <nav id="site-nav" class="site-nav" aria-label="Primary">
+    <nav id="site-nav" class="site-nav" aria-label="Main navigation">
       <ul>
         <li><a class="<?= basename($_SERVER['PHP_SELF'])=='index.php'?'active':'' ?>" href="index.php">Home</a></li>
         <li><a class="<?= basename($_SERVER['PHP_SELF'])=='courses.php'?'active':'' ?>" href="courses.php">Courses</a></li>

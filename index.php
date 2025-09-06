@@ -4,6 +4,11 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="description"
+    content="Artisan Echo - Music courses, instruments, and creative workshops. Join us to learn and grow your musical journey.">
+  <meta name="keywords" content="music courses, instrument lessons, creative workshops, artisan echo, online music shop">
+  <meta name="author" content="Dipesh Siwakoti">
+  <meta name="robots" content="index, follow">
   <title>Home | Artisan Echo</title>
   <link rel="apple-touch-icon" sizes="180x180" href="./assets/favicon_io/apple-touch-icon.png" />
   <link rel="icon" type="image/png" sizes="32x32" href="./assets/favicon_io/favicon-32x32.png" />
@@ -111,7 +116,6 @@
       </div>
     </section>
 
-
     <section class="cta container">
       <div class="cta-bar">
         <h2 class="action-title">Ready to start your musical journey?</h2>
@@ -128,6 +132,5 @@
   <script src="js/main.js"></script>
 
 </body>
-
 
 </html>
