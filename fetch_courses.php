@@ -29,8 +29,10 @@ $courses = $stmt->fetchAll(PDO::FETCH_ASSOC);
 
 if ($courses) {
     foreach ($courses as $course) {
+              $image = !empty($course['image_url']) ? htmlspecialchars($course['image_url']) : 'assets/img/course_placeholder.jpg';
+
         echo "<li class='card' data-cat='" . strtolower($course['instrument']) . " " . strtolower($course['level']) . " " . strtolower($course['age_group']) . "'>";
-        echo "  <img loading='lazy' class='card-media' src='assets/img/course_placeholder.jpg' alt='" . htmlspecialchars($course['title']) . "' />";
+        echo "  <img loading='lazy' class='card-media' src='$image' alt='" . htmlspecialchars($course['title']) . "' />";
         echo "  <p class='small'>" . ucfirst($course['level']) . " · " . htmlspecialchars($course['duration']) . "</p>";
         echo "  <h3>" . htmlspecialchars($course['title']) . "</h3>";
         echo "  <p>" . htmlspecialchars($course['description']) . "</p>";

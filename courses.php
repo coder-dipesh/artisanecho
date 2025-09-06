@@ -27,34 +27,41 @@ require 'db.php';
     <!-- Filters -->
     <section class="filters container">
       <div class="filter-row">
-        <label>
-          Instrument
-          <select class="select" id="fInstrument">
-            <option value="all">All</option>
-            <option value="Guitar">Guitar</option>
-            <option value="Piano">Piano</option>
-            <option value="Voice">Voice</option>
-            <option value="Drums">Drums</option>
-          </select>
-        </label>
-        <label>
-          Level
-          <select class="select" id="fLevel">
-            <option value="any">Any</option>
-            <option value="beginner">Beginner</option>
-            <option value="intermediate">Intermediate</option>
-            <option value="advanced">Advanced</option>
-          </select>
-        </label>
-        <label>
-          Age Group
-          <select class="select" id="fAge">
-            <option value="any">Any</option>
-            <option value="kids">Kids</option>
-            <option value="teens">Teens</option>
-            <option value="adults">Adults</option>
-          </select>
-        </label>
+        <form id="filterForm" class="form-inline">
+          <div>
+
+            <label>
+              Instrument
+              <select class=" select" id="fInstrument">
+                <option value="all">All</option>
+                <option value="Guitar">Guitar</option>
+                <option value="Piano">Piano</option>
+                <option value="Voice">Voice</option>
+                <option value="Drums">Drums</option>
+              </select>
+            </label>
+            <label>
+              Level
+              <select class="select" id="fLevel">
+                <option value="any">Any</option>
+                <option value="beginner">Beginner</option>
+                <option value="intermediate">Intermediate</option>
+                <option value="advanced">Advanced</option>
+              </select>
+            </label>
+            <label>
+              Age Group
+              <select class="select" id="fAge">
+                <option value="any">Any</option>
+                <option value="kids">Kids</option>
+                <option value="teens">Teens</option>
+                <option value="adults">Adults</option>
+              </select>
+            </label>
+          </div>
+
+        </form>
+
       </div>
     </section>
 
@@ -77,6 +84,7 @@ require 'db.php';
     <div class="modal" id="courseModal" role="dialog" aria-modal="true" aria-labelledby="courseTitle" hidden>
       <div class="modal-content">
         <button class="modal-close" aria-label="Close">×</button>
+
         <h3 id="courseTitle">Course title</h3>
         <div id="courseDesc">Course description goes here.</div>
         <div id="courseActions" class="modal-actions"></div>

@@ -494,9 +494,10 @@ a:hover {
 }
 
 .lightbox img { 
-	width: 100%; 
+	width: 80%; 
 	height: auto; 
 	display: block; 
+	place-items: center;
 	border-radius: 12px; 
 }
 
@@ -945,7 +946,7 @@ input.success, textarea.success {
 
 .card-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  /* grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); */
   gap: 2rem;
   list-style: none;
   padding: 0;
