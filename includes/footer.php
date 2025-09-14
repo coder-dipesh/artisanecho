@@ -40,6 +40,6 @@
 
   <div class="container copy small">
     © 2025 Artisan Echo | Designed and Developed with ❤️ by
-    <a href="https://dipeshsiwakoti.com.np" target="_blank" rel="noopener noreferrer"> Dipesh Siwakoti </a>
+    <a href="https://dipeshsiwakoti.com.np" target="_blank" rel="noopener noreferrer"> Dipesh</a>
   </div>
 </footer>
